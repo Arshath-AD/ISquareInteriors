@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-charcoal font-sans antialiased;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+
+  /* ── Buttons ───────────────────────────────────────────────── */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-navy-700 text-white px-7 py-3.5 text-sm font-medium tracking-wider uppercase transition-all duration-300 ease-elegant hover:bg-gold-400 hover:-translate-y-0.5 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-400;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border border-navy-700 text-navy-700 px-7 py-3.5 text-sm font-medium tracking-wider uppercase transition-all duration-300 ease-elegant hover:bg-navy-700 hover:text-white hover:-translate-y-0.5 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-700;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center gap-2 bg-gold-400 text-white px-7 py-3.5 text-sm font-medium tracking-wider uppercase transition-all duration-300 ease-elegant hover:bg-navy-700 hover:-translate-y-0.5 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-700;
+  }
+
+  /* ── Section container ─────────────────────────────────────── */
+  .container-site {
+    @apply w-full max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 xl:px-16;
+  }
+
+  /* ── Section spacing ───────────────────────────────────────── */
+  .section-pad {
+    @apply py-20 md:py-28 lg:py-36;
+  }
+
+  /* ── Section label ─────────────────────────────────────────── */
+  .section-label {
+    @apply text-gold-400 text-xs font-medium tracking-[0.25em] uppercase mb-4;
+  }
+
+  /* ── Divider line ──────────────────────────────────────────── */
+  .divider-gold {
+    @apply w-12 h-px bg-gold-400 mt-5;
+  }
+
+  /* ── Card hover lift ───────────────────────────────────────── */
+  .card-lift {
+    @apply transition-transform duration-500 ease-elegant hover:-translate-y-1.5;
+  }
+
+  /* ── Image overlay ─────────────────────────────────────────── */
+  .img-overlay {
+    @apply absolute inset-0 bg-navy-700/0 transition-all duration-500 group-hover:bg-navy-700/30;
+  }
+}
+
+/* ── Scroll-reveal helper (JS adds .revealed) ──────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Custom scrollbar ──────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF8F5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C4974A;
+  border-radius: 3px;
+}
